@@ -11,16 +11,16 @@ public class AddressTest {
     @Test
     public void testDtoAddres() {
         final AddressDTO dto = new AddressDTOBuilder()
-                .setCep("13470170")
-                .setStreet("Rua Tunísia")
+                .setCep("13468192")
+                .setStreet("Rua Das Oliveiras")
                 .setInformation("")
                 .setNeighborhood("Parque das Nações")
                 .setCity("Americana")
                 .setState("SP")
                 .createAddressDTO();
 
-        Assert.assertEquals("13470170", dto.getCep());
-        Assert.assertEquals("Rua Tunísia", dto.getStreet());
+        Assert.assertEquals("13468192", dto.getCep());
+        Assert.assertEquals("Rua Das Oliveiras", dto.getStreet());
         Assert.assertEquals("Parque das Nações", dto.getNeighborhood());
         Assert.assertTrue(Strings.isNullOrEmpty(dto.getInformation()));
         Assert.assertEquals("Americana", dto.getCity());

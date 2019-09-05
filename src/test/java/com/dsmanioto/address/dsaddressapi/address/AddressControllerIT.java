@@ -43,15 +43,15 @@ public class AddressControllerIT {
     public void testAddressByCepNormal() throws Exception {
         mvc.perform(
                 MockMvcRequestBuilders
-                .get("/address/cep/{1}", "13470170")
+                .get("/address/cep/{1}", "13469130")
                     .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                     .andExpect(status().isOk())
                     .andExpect(MockMvcResultMatchers.jsonPath("$.uf").value("SP"))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$.cep").value("13470-170"))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$.bairro").value("Parque das Nações"))
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.cep").value("13469-130"))
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.bairro").value("Vila Amorim"))
                     .andExpect(MockMvcResultMatchers.jsonPath("$.localidade").value("Americana"))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$.logradouro").value("Rua Tunísia"));
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.logradouro").value("Rua Vicente de Carvalho"));
     }
 
 }
