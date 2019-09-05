@@ -1,18 +1,15 @@
 package com.dsmanioto.address.dsaddressapi.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddressDTO {
 
     @JsonProperty("cep")
-    private String CEP;
+    private String cep;
 
     @JsonProperty("logradouro")
     private String street;
-
-    private String number;
 
     @JsonProperty("complemento")
     private String information;
@@ -26,66 +23,63 @@ public class AddressDTO {
     @JsonProperty("uf")
     private String state;
 
-    public String getCEP() {
-        return CEP;
+    public AddressDTO() {
     }
 
-    public AddressDTO setCEP(String CEP) {
-        this.CEP = CEP;
-        return this;
+    public AddressDTO(String cep, String street, String information, String neighborhood, String city, String state) {
+        this.cep = cep;
+        this.street = street;
+        this.information = information;
+        this.neighborhood = neighborhood;
+        this.city = city;
+        this.state = state;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public String getStreet() {
         return street;
     }
 
-    public AddressDTO setStreet(String street) {
+    public void setStreet(String street) {
         this.street = street;
-        return this;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public AddressDTO setNumber(String number) {
-        this.number = number;
-        return this;
     }
 
     public String getInformation() {
         return information;
     }
 
-    public AddressDTO setInformation(String information) {
+    public void setInformation(String information) {
         this.information = information;
-        return this;
     }
 
     public String getNeighborhood() {
         return neighborhood;
     }
 
-    public AddressDTO setNeighborhood(String neighborhood) {
+    public void setNeighborhood(String neighborhood) {
         this.neighborhood = neighborhood;
-        return this;
     }
 
     public String getCity() {
         return city;
     }
 
-    public AddressDTO setCity(String city) {
+    public void setCity(String city) {
         this.city = city;
-        return this;
     }
 
     public String getState() {
         return state;
     }
 
-    public AddressDTO setState(String state) {
+    public void setState(String state) {
         this.state = state;
-        return this;
     }
 }
