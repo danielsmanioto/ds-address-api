@@ -1,4 +1,4 @@
-package com.dsmanioto.address.dsaddressapi.address;
+package com.dsmanioto.address.dsaddressapi.controller;
 
 import com.dsmanioto.address.dsaddressapi.dto.AddressDTO;
 import com.dsmanioto.address.dsaddressapi.service.impl.ViaCEPImpl;

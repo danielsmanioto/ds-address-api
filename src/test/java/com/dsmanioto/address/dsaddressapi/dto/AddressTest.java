@@ -1,7 +1,5 @@
-package com.dsmanioto.address.dsaddressapi.address;
+package com.dsmanioto.address.dsaddressapi.dto;
 
-import com.dsmanioto.address.dsaddressapi.dto.AddressDTO;
-import com.dsmanioto.address.dsaddressapi.dto.AddressDTOBuilder;
 import org.assertj.core.util.Strings;
 import org.junit.Assert;
 import org.junit.Test;
