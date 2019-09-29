@@ -4,6 +4,10 @@ API for centralize Address rules and CEP search
 ### Compilar e subir a aplicação
 `mvn clean install && mvn spring-boot:run`
 
+### Compilar e subir com Docker
+`mvn clean install && ./build.sh` <br>
+`./run`
+
 ### Buscar endereco por CEP
 `http://localhost:8080/address/cep/<CEP>`
 
