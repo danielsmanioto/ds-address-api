@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.7.RELEASE</version>
+		<version>2.2.2.RELEASE</version>
 		<relativePath/>
 	</parent>
 
@@ -16,6 +16,7 @@
 	<description>API address and find Brasilian CEP</description>
 
 	<properties>
+		<springfox-version>2.9.2</springfox-version>
 		<java.version>11</java.version>
 	</properties>
 
@@ -46,12 +47,12 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>3.0.0</version>
+			<version>${springfox-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>3.0.0</version>
+			<version>${springfox-version}</version>
 		</dependency>
 	</dependencies>
 
