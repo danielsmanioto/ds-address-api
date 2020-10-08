@@ -1,4 +1,4 @@
-package com.dsmanioto.address.dsaddressapi.controller;
+package com.dsmanioto.address.controller;
 
 import org.junit.Before;
 import org.junit.Test;

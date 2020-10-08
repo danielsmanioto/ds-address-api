@@ -1,4 +1,4 @@
-package com.dsmanioto.address.dsaddressapi;
+package com.dsmanioto.address;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

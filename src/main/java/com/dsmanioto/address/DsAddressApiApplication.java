@@ -1,4 +1,4 @@
-package com.dsmanioto.address.dsaddressapi;
+package com.dsmanioto.address;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

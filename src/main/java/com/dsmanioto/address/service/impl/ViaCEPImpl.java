@@ -1,7 +1,7 @@
-package com.dsmanioto.address.dsaddressapi.service.impl;
+package com.dsmanioto.address.service.impl;
 
-import com.dsmanioto.address.dsaddressapi.dto.AddressDTO;
-import com.dsmanioto.address.dsaddressapi.service.AddressService;
+import com.dsmanioto.address.dto.AddressDTO;
+import com.dsmanioto.address.service.AddressService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

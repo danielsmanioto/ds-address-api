@@ -1,4 +1,4 @@
-package com.dsmanioto.address.dsaddressapi.dto;
+package com.dsmanioto.address.dto;
 
 import com.fasterxml.jackson.annotation.*;
 

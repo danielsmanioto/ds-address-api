@@ -1,4 +1,4 @@
-package com.dsmanioto.address.dsaddressapi.dto;
+package com.dsmanioto.address.dto;
 
 public class AddressDTOBuilder {
     private String cep;
