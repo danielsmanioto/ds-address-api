@@ -1,6 +1,6 @@
 package com.dsmanioto.address.controller;
 
-import com.dsmanioto.address.dto.AddressDTO;
+import com.dsmanioto.address.controller.dto.AddressDTO;
 import com.dsmanioto.address.service.impl.ViaCEPImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

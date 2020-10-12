@@ -1,6 +1,6 @@
 package com.dsmanioto.address.service;
 
-import com.dsmanioto.address.dto.AddressDTO;
+import com.dsmanioto.address.controller.dto.AddressDTO;
 
 @FunctionalInterface
 public interface AddressService {

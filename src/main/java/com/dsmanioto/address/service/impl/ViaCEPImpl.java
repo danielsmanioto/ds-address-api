@@ -1,6 +1,6 @@
 package com.dsmanioto.address.service.impl;
 
-import com.dsmanioto.address.dto.AddressDTO;
+import com.dsmanioto.address.controller.dto.AddressDTO;
 import com.dsmanioto.address.service.AddressService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

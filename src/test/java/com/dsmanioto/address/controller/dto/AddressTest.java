@@ -1,21 +1,23 @@
-package com.dsmanioto.address.dto;
+package com.dsmanioto.address.controller.dto;
 
 import org.assertj.core.util.Strings;
 import org.junit.Assert;
 import org.junit.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 public class AddressTest {
 
     @Test
     public void testDtoAddres() {
-        final AddressDTO dto = new AddressDTOBuilder()
-                .setCep("13468192")
-                .setStreet("Rua Das Oliveiras")
-                .setInformation("")
-                .setNeighborhood("Parque das Nações")
-                .setCity("Americana")
-                .setState("SP")
-                .createAddressDTO();
+        final AddressDTO dto = AddressDTO.builder()
+                .cep("13468192")
+                .street("Rua Das Oliveiras")
+                .information("")
+                .neighborhood("Parque das Nações")
+                .city("Americana")
+                .state("SP")
+                .build();
 
         Assert.assertEquals("13468192", dto.getCep());
         Assert.assertEquals("Rua Das Oliveiras", dto.getStreet());
