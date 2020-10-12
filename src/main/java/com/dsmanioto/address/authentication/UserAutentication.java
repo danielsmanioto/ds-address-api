@@ -16,12 +16,8 @@ import java.util.Optional;
 @Component
 public class UserAutentication implements UserDetailsService {
 
-    private final UserService service;
-
     @Autowired
-    public UserAutentication(UserService service) {
-        this.service = service;
-    }
+    private UserService service;
 
     @Override
     public UserDetails loadUserByUsername(String username) {

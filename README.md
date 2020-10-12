@@ -18,13 +18,15 @@ API for centralize Address rules and CEP search
 `./mvnw clean install && ./build.sh` <br>
 `./run`
 
+### Authentication
+
+http://localhost:8080/authentication/public
+
 ### Documentation - Swagger 
 
 http://localhost:8080/swagger-ui.html
 
-### Buscar endereco por CEP
-`http://localhost:8080/address/protected/cep/<CEP>`
-
+### Buscar endereco po
 ### APIs integration
 https://viacep.com.br
 
