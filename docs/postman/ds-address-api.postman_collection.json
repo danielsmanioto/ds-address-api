@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "72124e49-59e2-41ab-8dc3-dc6a0a953f00",
+		"name": "ds-address-api",
+		"description": "API for centralize address integrations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "address",
+			"item": [
+				{
+					"name": "Find address by Brasilian CEP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYW5pZWwiLCJleHAiOjE2MDI1NTkzMTAsImlhdCI6MTYwMjU0MTMxMH0.RRIlG7I4132pc9zCMStAuZCrMUSuhBllSccGLG1RE7q7YdtF3JikNUwysyPgvltoFORNdrE1Y4LMEiXk81SwfQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/address/protected/cep/13457638",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"protected",
+								"cep",
+								"13457638"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Folder for address"
+		},
+		{
+			"name": "http://localhost:8080/authentication/public",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"username\" : \"daniel\",\n\t\"password\" : \"123\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/authentication/public",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authentication",
+						"public"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

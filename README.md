@@ -1,5 +1,12 @@
 # ds-address-api
-API for centralize Address rules and CEP search 
+Rest API for centralize Address rules and CEP search 
+
+## Tecnologias
+Java 11+ <br>
+SpringBoot 2<br>
+Maven<br>
+JWT / Sring boot / Spring data / Spring Security<br>
+CI/CD with TravisCI
 
 # Steps
 
@@ -18,21 +25,15 @@ API for centralize Address rules and CEP search
 `./mvnw clean install && ./build.sh` <br>
 `./run`
 
-### Authentication
-
-http://localhost:8080/authentication/public
-
 ### Documentation - Swagger 
 
 http://localhost:8080/swagger-ui.html
 
-### Buscar endereco po
+There you will find how you have authentication.
+You can import the more latest collection postman in docs/postman
+
 ### APIs integration
 https://viacep.com.br
 
 <img src="/docs/via_cep_integration.png"/>
 
-## Tecnologias
-Java 11+ <br>
-SpringBoot 2<br>
-Maven<br>
