@@ -14,14 +14,14 @@ CI/CD with TravisCI
 2. Compile and generate jar artefectory `./mvn clean install`
 3. java -jar target/ds-address-api-0.0.1-SNAPSHOT.jar
 
-#Enviroments
+# Enviroments
 
 <ul>
   <li>local</li>
   <li>production</li>
 </ul>
 
-### Compilar e subir com Docker
+### Compile and Run with Docker
 `./mvnw clean install && ./build.sh` <br>
 `./run`
 
