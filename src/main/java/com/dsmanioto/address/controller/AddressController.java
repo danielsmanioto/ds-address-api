@@ -18,8 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/address")
 public class AddressController {
 
+    private final ViaCEPImpl viaCEPService;
+
     @Autowired
-    private ViaCEPImpl viaCEPService;
+    public AddressController(ViaCEPImpl viaCEPService) {
+        this.viaCEPService = viaCEPService;
+    }
 
     @ApiOperation("Find address by Brasilian CEP")
     @ApiResponses(value = @ApiResponse(code = 200, message = "OK"))
