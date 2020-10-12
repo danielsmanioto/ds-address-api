@@ -8,7 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -25,7 +24,7 @@ public class UserAutentication implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) {
         Optional<User> user = service.findByUserName(username);
 
         if(!user.isPresent()) {
@@ -36,8 +35,7 @@ public class UserAutentication implements UserDetailsService {
     }
 
     private List<GrantedAuthority> getAuthoritiesByUser() {
-        List<GrantedAuthority> authorityListAdmin = AuthorityUtils.createAuthorityList("ROLE_USER", "ROLE_ADMIN");
-        return authorityListAdmin;
+        return AuthorityUtils.createAuthorityList("ROLE_USER", "ROLE_ADMIN");
     }
 
 }
