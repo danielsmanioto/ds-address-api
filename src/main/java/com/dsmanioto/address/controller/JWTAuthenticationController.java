@@ -1,6 +1,7 @@
 package com.dsmanioto.address.controller;
 
 import com.dsmanioto.address.authentication.jwt.JwtTokenUtil;
+import com.dsmanioto.address.exception.JWTAuthenticaationExeception;
 import com.dsmanioto.address.service.UserAutenticationService;
 import com.dsmanioto.address.controller.dto.request.JWTUserRequestDTO;
 import com.dsmanioto.address.controller.dto.response.JWTUserResponseDTO;
@@ -36,7 +37,7 @@ public class JWTAuthenticationController {
     private UserAutenticationService userAutentication;
 
     @PostMapping
-    public ResponseEntity<JWTUserResponseDTO> createAuthenticationToken(@RequestBody JWTUserRequestDTO jwtUserDTO) throws Exception {
+    public ResponseEntity<JWTUserResponseDTO> createAuthenticationToken(@RequestBody JWTUserRequestDTO jwtUserDTO) {
         authenticate(jwtUserDTO.getUsername(), jwtUserDTO.getPassword());
 
         final UserDetails userDetails = userAutentication.loadUserByUsername(jwtUserDTO.getUsername());
@@ -46,16 +47,16 @@ public class JWTAuthenticationController {
         return ResponseEntity.ok(new JWTUserResponseDTO(token));
     }
 
-    private void authenticate(String username, String password) throws Exception {
+    private void authenticate(String username, String password) {
         Objects.requireNonNull(username);
         Objects.requireNonNull(password);
 
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         } catch (DisabledException e) {
-            throw new Exception("USER_DISABLED", e);
+            throw new JWTAuthenticaationExeception("USER_DISABLED", e.getMessage());
         } catch (BadCredentialsException e) {
-            throw new Exception("INVALID_CREDENTIALS", e);
+            throw new JWTAuthenticaationExeception("INVALID_CREDENTIALS", e.getMessage());
         }
     }
 
