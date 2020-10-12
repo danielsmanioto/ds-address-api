@@ -1,6 +1,6 @@
 package com.dsmanioto.address.service.impl;
 
-import com.dsmanioto.address.authentication.User;
+import com.dsmanioto.address.model.User;
 import com.dsmanioto.address.service.UserService;
 import org.springframework.stereotype.Service;
 

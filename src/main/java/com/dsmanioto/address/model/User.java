@@ -1,4 +1,4 @@
-package com.dsmanioto.address.authentication;
+package com.dsmanioto.address.model;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

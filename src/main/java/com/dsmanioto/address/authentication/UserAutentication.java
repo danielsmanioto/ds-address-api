@@ -1,6 +1,7 @@
 package com.dsmanioto.address.authentication;
 
 import com.dsmanioto.address.exception.UserAutenticationUserDontExistExeception;
+import com.dsmanioto.address.model.User;
 import com.dsmanioto.address.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -25,7 +26,7 @@ public class UserAutentication implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<com.dsmanioto.address.authentication.User> user = service.findByUserName(username);
+        Optional<User> user = service.findByUserName(username);
 
         if(!user.isPresent()) {
             throw new UserAutenticationUserDontExistExeception("User " + username + " don't exist");
