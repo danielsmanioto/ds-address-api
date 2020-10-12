@@ -23,7 +23,7 @@ public class AddressController {
 
     @ApiOperation("Find address by Brasilian CEP")
     @ApiResponses(value = @ApiResponse(code = 200, message = "OK"))
-    @GetMapping("/cep/{cep}")
+    @GetMapping("/protected/cep/{cep}")
     public ResponseEntity<AddressDTO> findByCep(@PathVariable("cep") String cep) {
         AddressDTO address = viaCEPService.findAddressByCep(cep);
 

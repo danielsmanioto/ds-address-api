@@ -23,7 +23,7 @@ API for centralize Address rules and CEP search
 http://localhost:8080/swagger-ui.html
 
 ### Buscar endereco por CEP
-`http://localhost:8080/address/cep/<CEP>`
+`http://localhost:8080/address/protected/cep/<CEP>`
 
 ### APIs integration
 https://viacep.com.br
