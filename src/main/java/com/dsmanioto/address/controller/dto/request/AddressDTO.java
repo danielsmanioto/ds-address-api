@@ -1,4 +1,4 @@
-package com.dsmanioto.address.controller.dto;
+package com.dsmanioto.address.controller.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

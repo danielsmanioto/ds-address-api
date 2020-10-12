@@ -1,4 +1,4 @@
-package com.dsmanioto.address.authentication;
+package com.dsmanioto.address.authentication.jwt;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

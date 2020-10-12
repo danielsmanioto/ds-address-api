@@ -1,7 +1,7 @@
 package com.dsmanioto.address.controller;
 
-import com.dsmanioto.address.controller.dto.AddressDTO;
-import com.dsmanioto.address.service.impl.ViaCEPImpl;
+import com.dsmanioto.address.controller.dto.request.AddressDTO;
+import com.dsmanioto.address.service.impl.ViaCEPServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/address")
 public class AddressController {
 
-    private final ViaCEPImpl viaCEPService;
+    private final ViaCEPServiceImpl viaCEPService;
 
     @Autowired
-    public AddressController(ViaCEPImpl viaCEPService) {
+    public AddressController(ViaCEPServiceImpl viaCEPService) {
         this.viaCEPService = viaCEPService;
     }
 

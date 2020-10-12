@@ -1,5 +1,6 @@
 package com.dsmanioto.address.controller.dto;
 
+import com.dsmanioto.address.controller.dto.request.AddressDTO;
 import org.assertj.core.util.Strings;
 import org.junit.Assert;
 import org.junit.Test;

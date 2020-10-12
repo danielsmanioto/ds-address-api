@@ -1,20 +1,19 @@
-package com.dsmanioto.address.authentication;
+package com.dsmanioto.address.service;
 
 import com.dsmanioto.address.exception.UserAutenticationUserDontExistExeception;
 import com.dsmanioto.address.model.User;
-import com.dsmanioto.address.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
-public class UserAutentication implements UserDetailsService {
+@Service
+public class UserAutenticationService implements UserDetailsService {
 
     @Autowired
     private UserService service;

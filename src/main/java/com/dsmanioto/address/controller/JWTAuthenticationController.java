@@ -1,7 +1,7 @@
 package com.dsmanioto.address.controller;
 
-import com.dsmanioto.address.authentication.JwtTokenUtil;
-import com.dsmanioto.address.authentication.UserAutentication;
+import com.dsmanioto.address.authentication.jwt.JwtTokenUtil;
+import com.dsmanioto.address.service.UserAutenticationService;
 import com.dsmanioto.address.controller.dto.request.JWTUserRequestDTO;
 import com.dsmanioto.address.controller.dto.response.JWTUserResponseDTO;
 import io.swagger.annotations.Api;
@@ -33,7 +33,7 @@ public class JWTAuthenticationController {
     private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
-    private UserAutentication userAutentication;
+    private UserAutenticationService userAutentication;
 
     @PostMapping
     public ResponseEntity<JWTUserResponseDTO> createAuthenticationToken(@RequestBody JWTUserRequestDTO jwtUserDTO) throws Exception {

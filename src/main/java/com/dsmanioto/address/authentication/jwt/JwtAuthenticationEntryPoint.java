@@ -1,4 +1,4 @@
-package com.dsmanioto.address.authentication;
+package com.dsmanioto.address.authentication.jwt;
 
 import java.io.IOException;
 import java.io.Serializable;

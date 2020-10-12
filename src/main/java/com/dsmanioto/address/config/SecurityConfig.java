@@ -1,17 +1,22 @@
 package com.dsmanioto.address.config;
 
-import com.dsmanioto.address.authentication.JwtAuthenticationEntryPoint;
-import com.dsmanioto.address.authentication.JwtRequestFilter;
-import com.dsmanioto.address.authentication.UserAutentication;
+import com.dsmanioto.address.authentication.jwt.JwtAuthenticationEntryPoint;
+import com.dsmanioto.address.authentication.jwt.JwtRequestFilter;
+import com.dsmanioto.address.service.UserAutenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -19,7 +24,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UserAutentication userService;
+    private UserAutenticationService userService;
 
     @Autowired
     private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
@@ -30,18 +35,35 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
 
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoder());
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/*/protected/**").hasRole("USER")
-                //.antMatchers("/*/admin/**").hasRole("ADMIN")
-                //.antMatchers("/user-application/managger/sysadmin/**").hasRole("ADMIN")
-                .antMatchers("/swagger-ui.html").hasRole("USER")
-                //.antMatchers("/user-application/managger/new-user").hasAnyAuthority()
+        http.csrf().disable()
+                    .authorizeRequests().antMatchers("/authentication/public").permitAll()
                 .and()
-                .httpBasic()
+                    .authorizeRequests().antMatchers("/swagger-ui.html").permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .csrf().disable();
+                    .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
+                .and().sessionManagement()
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+        http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
