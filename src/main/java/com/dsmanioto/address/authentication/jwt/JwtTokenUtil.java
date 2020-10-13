@@ -1,8 +1,10 @@
 package com.dsmanioto.address.authentication.jwt;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -13,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+@Slf4j
 @Component
 public class JwtTokenUtil implements Serializable {
 
@@ -24,7 +27,15 @@ public class JwtTokenUtil implements Serializable {
     private String secret;
 
     public String getUsernameFromToken(String token) {
-        return getClaimFromToken(token, Claims::getSubject);
+        try {
+            return getClaimFromToken(token, Claims::getSubject);
+        } catch (IllegalArgumentException e) {
+            log.info("Unable to get JWT Token");
+        } catch (ExpiredJwtException e) {
+            log.info("JWT Token has expired");
+        }
+
+        return null;
     }
 
     public Date getIssuedAtDateFromToken(String token) {
