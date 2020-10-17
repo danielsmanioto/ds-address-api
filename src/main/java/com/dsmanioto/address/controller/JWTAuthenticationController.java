@@ -2,7 +2,7 @@ package com.dsmanioto.address.controller;
 
 import com.dsmanioto.address.authentication.jwt.JwtTokenUtil;
 import com.dsmanioto.address.exception.JWTAuthenticaationExeception;
-import com.dsmanioto.address.service.UserAutenticationService;
+import com.dsmanioto.address.service.impl.UserAutenticationService;
 import com.dsmanioto.address.controller.dto.request.JWTUserRequestDTO;
 import com.dsmanioto.address.controller.dto.response.JWTUserResponseDTO;
 import io.swagger.annotations.Api;

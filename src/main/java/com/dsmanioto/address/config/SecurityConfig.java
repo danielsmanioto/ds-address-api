@@ -2,7 +2,7 @@ package com.dsmanioto.address.config;
 
 import com.dsmanioto.address.authentication.jwt.JwtAuthenticationEntryPoint;
 import com.dsmanioto.address.authentication.jwt.JwtRequestFilter;
-import com.dsmanioto.address.service.UserAutenticationService;
+import com.dsmanioto.address.service.impl.UserAutenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

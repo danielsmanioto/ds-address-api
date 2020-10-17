@@ -1,7 +1,8 @@
-package com.dsmanioto.address.service;
+package com.dsmanioto.address.service.impl;
 
 import com.dsmanioto.address.exception.UserAutenticationUserDontExistExeception;
 import com.dsmanioto.address.model.User;
+import com.dsmanioto.address.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;

@@ -1,6 +1,6 @@
 package com.dsmanioto.address.authentication.jwt;
 
-import com.dsmanioto.address.service.UserAutenticationService;
+import com.dsmanioto.address.service.impl.UserAutenticationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
