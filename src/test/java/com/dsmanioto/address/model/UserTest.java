@@ -1,4 +1,4 @@
-package com.dsmanioto.address.controller.model;
+package com.dsmanioto.address.model;
 
 import com.dsmanioto.address.model.User;
 import org.junit.jupiter.api.Assertions;

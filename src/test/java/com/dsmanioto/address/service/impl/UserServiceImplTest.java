@@ -1,4 +1,4 @@
-package com.dsmanioto.address.controller.service.impl;
+package com.dsmanioto.address.service.impl;
 
 import com.dsmanioto.address.model.User;
 import com.dsmanioto.address.repository.UserRepository;

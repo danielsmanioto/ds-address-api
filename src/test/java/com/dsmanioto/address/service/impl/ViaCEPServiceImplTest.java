@@ -1,7 +1,6 @@
-package com.dsmanioto.address.controller.service.impl;
+package com.dsmanioto.address.service.impl;
 
 import com.dsmanioto.address.controller.dto.request.AddressDTO;
-import com.dsmanioto.address.service.impl.ViaCEPServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

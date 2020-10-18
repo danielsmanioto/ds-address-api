@@ -30,6 +30,8 @@ CI/CD with TravisCI
 http://localhost:8080/swagger-ui.html
 
 There you will find how you have authentication.
+
+### Postman
 You can import the more latest collection postman in docs/postman
 
 ### APIs integration
