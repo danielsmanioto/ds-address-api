@@ -42,12 +42,10 @@ public class UserAutenticationServiceTest {
                 .given(userService.findByUserName("caroline"))
                 .willReturn(Optional.empty());
 
-        try {
+        Assertions.assertThrows(UserAutenticationUserDontExistExeception.class, () -> {
             userAutenticationService.loadUserByUsername("caroline");
-            Assertions.assertTrue(false);
-        } catch (UserAutenticationUserDontExistExeception e) {
-            Assertions.assertTrue(true);
-        }
+        });
+
     }
 
 }
