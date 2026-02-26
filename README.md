@@ -1,41 +1,100 @@
 # ds-address-api
-Rest API for centralize Address rules and CEP search 
+
+Uma API Rest para centralizar regras e buscas de endereço (CEP).
 
 ## Tecnologias
-Java 11+ <br>
-SpringBoot 2<br>
-Maven<br>
-JWT / Sring boot / Spring data / Spring Security<br>
-CI/CD with TravisCI
 
-# Steps
+Este projeto utiliza as seguintes tecnologias e ferramentas:
 
-1. Install JDK 11
-2. Compile and generate jar artefectory `./mvn clean install`
-3. java -jar target/ds-address-api-0.0.1-SNAPSHOT.jar
+- **Java:** Versão 11+
+- **Spring Boot:** Versão 2+
+- **Gerenciamento de Dependências:** Maven
+- **Autenticação e Segurança:**
+  - JWT
+  - Spring Security
+  - Spring Data
+- **Integração Contínua e Entrega Contínua (CI/CD):** TravisCI
 
-# Enviroments
+## Funcionalidades
 
-<ul>
-  <li>local</li>
-  <li>production</li>
-</ul>
+- Busca de endereço por CEP utilizando integração com o serviço [ViaCEP](https://viacep.com.br).
+- Autenticação JWT.
+- Documentação interativa através do Swagger.
 
-### Compile and Run with Docker
-`./mvnw clean install && ./build.sh` <br>
-`./run`
+## Configuração e Execução
 
-### Documentation - Swagger 
+### Pré-requisitos
 
-http://localhost:8080/swagger-ui.html
+1. Instale o **Java 11+**.
+2. Verifique se **Maven** está configurado em sua máquina.
 
-There you will find how you have authentication.
+### Compilação e Execução
 
-### Postman
-You can import the more latest collection postman in docs/postman
+1. Compile o projeto e gere o arquivo `.jar` com o comando:
+   ```bash
+   ./mvn clean install
+   ```
 
-### APIs integration
-https://viacep.com.br
+2. Para executar a aplicação:
+   ```bash
+   java -jar target/ds-address-api-0.0.1-SNAPSHOT.jar
+   ```
 
-<img src="/docs/via_cep_integration.png"/>
+### Docker
 
+Também é possível executar a aplicação através do Docker. Use os comandos abaixo:
+
+1. Compile e crie a imagem Docker:
+   ```bash
+   ./mvnw clean install && ./build.sh
+   ```
+
+2. Execute a imagem gerada:
+   ```bash
+   ./run
+   ```
+
+## Ambientes
+
+O sistema permite a configuração de múltiplos ambientes. Exemplo:
+
+- **local**
+- **produção**
+
+## Documentação da API
+
+- Acesse o Swagger para visualizar e testar as rotas disponíveis:
+  ```text
+  http://localhost:8080/swagger-ui.html
+  ```
+
+- Arquivo de coleção do Postman disponível na pasta: `docs/postman`.
+
+## Integrações
+
+- A API utiliza o serviço do [ViaCEP](https://viacep.com.br) para buscar informações de endereço.
+
+## Contribuindo
+
+Contribuições são bem-vindas! Para começar:
+
+1. Faça um fork do repositório.
+2. Crie uma nova branch com sua feature ou correção:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Faça as alterações e commit:
+   ```bash
+   git commit -m "Minha contribuição"
+   ```
+4. Envie para sua branch:
+   ```bash
+   git push origin minha-feature
+   ```
+5. Abra um Pull Request para análise!
+
+---
+
+> **Nota:** Para mais informações, consulte o arquivo `CONTRIBUTING.md` (caso exista) ou entre em contato com o mantenedor.
+
+---
